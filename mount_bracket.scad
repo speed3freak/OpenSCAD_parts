@@ -20,7 +20,7 @@ translate([-1,0,20]) rotate([0,90,0] ) cylinder(r=4,h=9);
 
 module bracket_gear(){
 union(){
-cylinder(r=12,h=8);
+cylinder(r=12.1,h=8);
 for(a=[0:10:360]){
 rotate([0,0,a]) translate([12,-.5,0]) cube([1,1,8]);
 }//end for

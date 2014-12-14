@@ -1,10 +1,43 @@
-module bracket_offset(){
+
+
+
+module footpeg_mount(){
+translate([15,52,30])rotate([0,90,90]) bracket_offset(20,15);
+translate([0,0,15]) rotate([90,0,0]) bracket_offset(10,15);
+hull(){
+for(x=[0,30]){
+for(y=[0,50]){
+ translate([x,y,0]) cylinder(r=3,h=30);
+}//end hull
+}//end x loop
+}//end y loop
+}//end part
+
+motor_cutout();
+module motor_cutout(){
+union(){
+cube([43,23,15],center=true);
+translate([11.5,0,-7.5]) motor();
+}//end union
+
+}
+
+module motor(){
+//motor
+difference(){
+cylinder(r=11.5,h=45);
+translate([20,0,22.5]) cube([20,20,45],center=true);
+translate([-20,0,22.5]) cube([20,20,45],center=true);
+}//end diff
+}
+
+module bracket_offset(thickness,offset){
 difference(){
 union(){
-translate([0,-14,0]) cube([10,28,20]);
-translate([0,0,20]) rotate([0,90,0] ) cylinder(r=14,h=10);
+translate([0,-14,0]) cube([thickness,28,offset]);
+translate([0,0,offset]) rotate([0,90,0] ) cylinder(r=14,h=thickness);
 }//end union
-translate([-1,0,20]) rotate([0,90,0] ) cylinder(r=4,h=11);
+translate([-1,0,offset]) rotate([0,90,0] ) cylinder(r=4,h=thickness+1);
 }//end diff
 }// end part
 
