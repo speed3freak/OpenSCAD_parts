@@ -13,11 +13,19 @@ for(y=[0,50]){
 }//end y loop
 }//end part
 
-motor_cutout();
+difference(){
+footpeg_mount();
+translate([15,28,22.5]) rotate([180,0,-90]) motor_cutout();
+}
+
+
 module motor_cutout(){
 union(){
-cube([43,23,15],center=true);
-translate([11.5,0,-7.5]) motor();
+cube([43,23,16],center=true);
+translate([11.5,0,-8.5]) motor();
+translate([25,0,4]) cube([7,7,26],center=true);
+translate([-2,0,4]) cube([7,7,26],center=true);
+translate([-10,0,5]) cylinder(r=5,h=25,center=true);
 }//end union
 
 }
