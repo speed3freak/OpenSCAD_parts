@@ -1,4 +1,4 @@
-
+footpeg_assembly();
 
 
 module footpeg_mount(){
@@ -13,11 +13,12 @@ for(y=[0,50]){
 }//end y loop
 }//end part
 
+module footpeg_assembly(){
 difference(){
 footpeg_mount();
 translate([15,28,22.5]) rotate([180,0,-90]) motor_cutout();
 }
-
+}
 
 module motor_cutout(){
 union(){
