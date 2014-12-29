@@ -26,7 +26,7 @@ cube([43,23,16],center=true);
 translate([11.5,0,-8.5]) motor();
 translate([25,0,4]) cube([7,7,26],center=true);
 translate([-2,0,4]) cube([7,7,26],center=true);
-translate([-10,0,5]) cylinder(r=5,h=25,center=true);
+translate([-10.25,0,5]) cylinder(r=5,h=25,center=true);
 }//end union
 
 }

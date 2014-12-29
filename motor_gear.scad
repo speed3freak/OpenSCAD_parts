@@ -1,3 +1,4 @@
+motor_gear();
 
 module motor_gear(){
 difference(){
@@ -10,9 +11,9 @@ cylinder(h=10,r=1);
 
 module gear() {
 union(){
-cylinder(r=5.1,h=10);
+cylinder(r=5,h=10);
 for(a=[0:24:360]){
-rotate([0,0,a]) translate([5,-.5,0]) cube([1.1,1,10]);
+rotate([0,0,a]) translate([4.9,-.5,0]) cube([1.2,1,10]);
 }//end for
 }//end union
 
