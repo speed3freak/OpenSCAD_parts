@@ -21,8 +21,8 @@ rotate([0,0,a]) translate([4.9,-.5,0]) cube([1.2,1,10]);
 
 module motor_shaft(){
 difference(){
-cylinder(r=3.5,h=7);
-translate([5.8,0,3.5]) cube([7,7,7],center=true);
-translate([-5.8,0,3.5]) cube([7,7,7],center=true);
+cylinder(r=3.7,h=7);
+translate([5.9,0,3.5]) cube([7,7,7],center=true);
+translate([-5.9,0,3.5]) cube([7,7,7],center=true);
 }//end diff
 }//end part
