@@ -44,9 +44,9 @@ translate([0,52,0]) cylinder(r=25,h=g_thick);
 
 
 module m6_bolt(){
-m6_nut_width = 10;
+m6_nut_width = 10.6;
 union(){
-translate([0,0,-1]) cylinder(r=3,h=11);
+translate([0,0,-1]) cylinder(r=3.3,h=11);
 translate([0,0,7.5]) nut_cap(m6_nut_width,5.5);
 }
 }
