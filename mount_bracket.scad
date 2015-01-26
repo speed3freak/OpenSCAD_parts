@@ -14,7 +14,7 @@ union(){
 translate([0,-12,0]) cube([8,24,20]);
 translate([0,0,20]) rotate([0,90,0] ) bracket_gear();
 }//end union
-translate([-1,0,20]) rotate([0,90,0] ) cylinder(r=4.3,h=9);
+translate([-1,0,20]) rotate([0,90,0] ) cylinder(r=4.4,h=9);
 }//end diff
 }// end part
 
@@ -43,7 +43,7 @@ cylinder(r=20,h=g_thick);
 for(x= [19,-19]){
 for(y= [19,-19]){
 translate([x,y,0]) cylinder(r=3.3,h=g_thick);
-translate([x,y,6]) cylinder(r=5.3,h=g_thick-6);
+translate([x,y,6]) cylinder(r=5.4,h=g_thick-6);
 }//end y loop
 }//end x loop
 }// end diff
