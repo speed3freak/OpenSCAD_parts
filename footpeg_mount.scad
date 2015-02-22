@@ -1,52 +1,37 @@
-footpeg_assembly();
+module lower_outer(){
+difference(){
+union(){
+rotate([15,0,-13]) translate([95,15,19]) rotate_extrude(convexity = 10) 2d_disk();
+hull(){
+translate([14,72,32]) cylinder(r=16,h=10);
+translate([14,72,29]) rotate([15,0,-13]) cylinder(r=16,h=7);}
+translate([-35,-14,14]) rotate([90,0,90]) cylinder(r=10,h=10);
+}
+translate([14,72,24]) rotate([0,0,0] ) cylinder(r=4.2,h=20);
+translate([-45,-14,14]) rotate([90,0,90] ) cylinder(r=4.2,h=30);
+translate([-43,-14,14]) rotate([90,0,90] ) cylinder(r=5.2,h=10);
+translate([14,72,24]) rotate([0,0,0] ) cylinder(r=5.2,h=10);
 
+rotate([0,0,-40]) translate([-3,-200,-30]) cube([250,400,100]);
+translate([-25,-14,14]) rotate([90,0,90]) cylinder(r=18,h=15);
+translate([-30,90,0]) cube([150,100,100]);
+}
+}
+
+translate([0,0,-6]) rotate([-15,0,13]) lower_outer();
+
+module 2d_disk(){
+//translate([105,-4]) square([30,8]);
+difference(){
+translate([130,-10]) square([10,20]);
+translate([140,0]) scale([1,2]) circle(r=5);
+}
+}
 
 module footpeg_mount(){
-translate([15,52,30])rotate([0,90,90]) bracket_offset(20,15);
-translate([0,0,15]) rotate([90,0,0]) bracket_offset(10,15);
-hull(){
-for(x=[0,30]){
-for(y=[0,50]){
- translate([x,y,0]) cylinder(r=3,h=30);
-}//end hull
-}//end x loop
-}//end y loop
+//translate([0,72,76])rotate([0,90,90]) bracket_offset(10,14);
+//translate([0,0,14]) rotate([90,0,0]) bracket_offset(10,14);
 }//end part
 
-module footpeg_assembly(){
-difference(){
-footpeg_mount();
-translate([15,28,22.5]) rotate([180,0,-90]) motor_cutout();
-}
-}
 
-module motor_cutout(){
-union(){
-cube([43,23,16],center=true);
-translate([11.5,0,-8.5]) motor();
-translate([25,0,4]) cube([7,7,26],center=true);
-translate([-2,0,4]) cube([7,7,26],center=true);
-translate([-10.25,0,5]) cylinder(r=5,h=25,center=true);
-}//end union
-
-}
-
-module motor(){
-//motor
-difference(){
-cylinder(r=11.5,h=45);
-translate([20,0,22.5]) cube([20,20,45],center=true);
-translate([-20,0,22.5]) cube([20,20,45],center=true);
-}//end diff
-}
-
-module bracket_offset(thickness,offset){
-difference(){
-union(){
-translate([0,-14,0]) cube([thickness,28,offset]);
-translate([0,0,offset]) rotate([0,90,0] ) cylinder(r=14,h=thickness);
-}//end union
-translate([-1,0,offset]) rotate([0,90,0] ) cylinder(r=4,h=thickness+1);
-}//end diff
-}// end part
 

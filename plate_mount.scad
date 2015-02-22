@@ -1,6 +1,5 @@
 g_thick = 10;
 plate_mount();
-
 module plate_mount(){
 union(){
 mirror([1,0,0]) plate_half();
