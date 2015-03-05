@@ -4,7 +4,8 @@ union(){
 rotate([15,0,-13]) translate([95,15,19]) rotate_extrude(convexity = 10) 2d_disk();
 hull(){
 translate([14,72,34]) cylinder(r=16,h=10);
-translate([14,72,29]) rotate([15,0,-13]) cylinder(r=16,h=7);}
+translate([14,72,29]) rotate([15,0,-13]) cylinder(r=16,h=7);
+}
 translate([-35,-14,14]) rotate([90,0,90]) cylinder(r=10,h=10);
 }
 translate([14,72,24]) rotate([0,0,0] ) cylinder(r=4.2,h=20);
@@ -29,13 +30,14 @@ translate([140,0]) scale([1,2]) circle(r=5);
 }
 
 translate([0,0,24]) rotate([0,90,0]) footpeg_mount();
+
 module footpeg_mount(){
 difference(){
 union(){
 translate([0,-28,0]) cut_cube(24,54,28,4);
 translate([9,4,26]) cut_cube(15,32,32,3);
 translate([4,15,56]) cut_cube(20,50,20,4);
-translate([0,48,74]) cut_cube(24,35,12,4);
+translate([0,48,74]) cut_cube(24,35,10,4);
 translate([0,-14,14]) rotate([90,0,90]) cylinder(h=14,r=10);
 }
 translate([20,-14,14]) rotate([90,0,90]) nut_cap(13.6,10);
