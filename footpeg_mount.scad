@@ -19,7 +19,7 @@ translate([-30,87,0]) cube([150,100,100]);
 }
 }
 
-//translate([0,0,-6]) rotate([-15,0,13]) lower_outer();
+translate([0,0,-9]) rotate([-14,4,13]) lower_outer();
 
 module 2d_disk(){
 //translate([105,-4]) square([30,8]);
@@ -29,7 +29,7 @@ translate([140,0]) scale([1,2]) circle(r=5);
 }
 }
 
-translate([0,0,24]) rotate([0,90,0]) footpeg_mount();
+//translate([0,0,24]) rotate([0,90,0]) footpeg_mount();
 
 module footpeg_mount(){
 difference(){
