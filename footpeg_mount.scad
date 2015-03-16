@@ -18,9 +18,10 @@ translate([-25,-14,14]) rotate([90,0,90]) cylinder(r=18,h=15);
 translate([-30,87,0]) cube([150,100,100]);
 }
 }
-
-translate([0,0,-9]) rotate([-14,4,13]) lower_outer();
-
+difference(){
+translate([0,0,-9.4]) rotate([-14.3,4,13]) lower_outer();
+translate([0,0,-1]) cube([150,200,2],center=true);
+}
 module 2d_disk(){
 //translate([105,-4]) square([30,8]);
 difference(){
